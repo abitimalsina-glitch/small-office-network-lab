@@ -1,0 +1,58 @@
+enable
+configure terminal
+
+! VLANs
+vlan 10
+name ADMIN
+exit
+
+vlan 20
+name FINANCE
+exit
+
+vlan 30
+name RECEPTION
+exit
+
+vlan 40
+name PRINTERS
+exit 
+
+vlan 50
+name WIRELESS
+exit
+
+! Access Ports
+interface range fa0/2-4
+switchport mode access
+switchport access vlan 10
+exit
+
+interface range fa0/5-6
+switchport mode access
+switchport access vlan 20
+exit
+
+interface range fa0/7-8
+switchport mode access
+switchport access vlan 30
+exit
+
+interface range fa0/9-10
+switchport mode access
+switchport access vlan 40
+exit
+
+interface fa0/11
+switchport mode access
+switchport access vlan 50
+exit
+
+! Trunk to router
+interface fa0/1
+switchport mode trunk
+switchport trunk allowed vlan 10,20,30,40,50
+exit
+
+end
+write memory
