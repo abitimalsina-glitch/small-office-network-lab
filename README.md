@@ -6,6 +6,7 @@ This project showcases a professional-grade network design for a Small Office Ho
 ## Repository Structure
 ```text
 .
+├── LICENSE
 ├── README.md                   # Project Overview & Quick Start
 ├── configurations/             # Device running configurations
 │   ├── dhcp-server-config.txt
